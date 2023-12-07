@@ -1,0 +1,87 @@
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color">
+    <main>
+        <header class="header">
+            <a href="index.html">
+                <img class="header__logo" src="img/logo.png" alt="Logotipo">
+            </a>
+        </header>
+
+        <nav class="navegacion">
+            <a class="navegacion__enlace navegacion__enlace--activo" href="tienda.html">Tienda</a>
+            <a class="navegacion__enlace" href="nosotros.html">Quienes somos</a>
+        </nav>
+
+        <main class="contenedor">
+            <h1>Contacto</h1>
+
+	   <div class="contenedor-contacto">
+            
+
+            <?php if(isset($_SESSION['message'])) {?>
+            <? = $_SESSION['message']?>
+            
+            <?php session_unset(); }?>
+
+            <div class="forma-contenedor">
+                <form action="comentarios.php" method="POST">
+                    <p>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" placeholder="Ingresa tu nombre" id="nombre" name="nombre" required>
+                    </p>
+                    <p>
+                        <label for="telefono">Tel&eacutefono:</label>
+                        <input type="tel" placeholder="Introduce tu numero telefonico" id="telefono" name="telefono" required>
+                    </p>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input class="correo" type="email" placeholder="Ingresa tu email"  id="email" name="email" width="100%" required>
+                    </p>
+                    <p>
+                        <label for="asunto">producto:</label>
+                        <input type="text" placeholder="Escribe el asunto" id="asunto" name="asunto" required>
+                    </p>
+                      <p>
+                        <label for="asunto">cantidad:</label>
+                        <input type="text" placeholder="Escribe el asunto" id="asunto" name="asunto" required>
+                    </p>
+                    <p>
+                        <label for="formaPago">Forma de pago:</label>
+                        <select id="formaPago" name="formaPago" required>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="tarjeta">Tarjeta</option>
+                        </select>
+                    </p>
+
+                    <p class="block">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" placeholder="Escribe tu mensaje aqui..." name="mensaje" rows="3" required></textarea>
+                    </p>
+                    <p class="block">
+                        <button type="submit" style="background-color:limegreen;" name="boton">
+                            Enviar
+                        </button>
+                        <button type="reset" style="background-color:indianred;" name="boton">
+                            Borrar
+                        </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer__texto">Benjamin Ochoa Valdovinos, Mariam Esperanza Ponce Patiño, Joshua Ivan Corona Cruz, Jose David Corona de la Cruz</p>
+    </footer>
+</body>
+
+
+<script>
+  initMap();
+</script>
